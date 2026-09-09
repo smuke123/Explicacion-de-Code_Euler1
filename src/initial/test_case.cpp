@@ -26,8 +26,10 @@ inline double ipow(double base, int exponent) {
 /// Los tests 1-5 son la Tabla 4.1 de Toro. Los tests 6-8 son extensiones del
 /// proyecto para medir orden de convergencia, balance hidrostatico y
 /// geometria esferica.
-const std::array<TestCaseDefinition, 8>& table() {
-    static const std::array<TestCaseDefinition, 8> cases = {{
+/// La tabla se dimensiona con `kTestCaseCount`, de modo que anadir una entrada
+/// sin incrementar la constante (o al contrario) no compila.
+const std::array<TestCaseDefinition, kTestCaseCount>& table() {
+    static const std::array<TestCaseDefinition, kTestCaseCount> cases = {{
         {"toro1", "Sod modificado (rarefaccion sonica en el abanico)",
          {1.0, 0.75, 1.0}, {0.125, 0.0, 0.1}, 0.3, 0.2,
          std::nullopt, std::nullopt, std::nullopt, std::nullopt, true, true},
@@ -59,8 +61,9 @@ const std::array<TestCaseDefinition, 8>& table() {
 }  // namespace
 
 const TestCaseDefinition& testCaseDefinition(int test) {
-    if (test < 1 || test > 8) {
-        throw ConfigError("test debe estar entre 1 y 8; recibido: " + std::to_string(test));
+    if (test < 1 || test > kTestCaseCount) {
+        throw ConfigError("test debe estar entre 1 y " + std::to_string(kTestCaseCount) +
+                          "; recibido: " + std::to_string(test));
     }
     return table()[static_cast<std::size_t>(test - 1)];
 }

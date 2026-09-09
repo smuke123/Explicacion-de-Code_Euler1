@@ -14,6 +14,14 @@ public:
     explicit ConfigError(const std::string& message) : std::runtime_error(message) {}
 };
 
+/// Numero de casos de prueba definidos (`test = 1 .. kTestCaseCount`).
+///
+/// Es la UNICA declaracion de este limite. `test_case.cpp` dimensiona su tabla
+/// con esta constante, asi que anadir un caso sin actualizarla —o al reves— es
+/// un error de compilacion, no un caso que se rechaza en tiempo de ejecucion.
+/// Ver docs/extending.md.
+inline constexpr int kTestCaseCount = 8;
+
 enum class LimiterKind { FirstOrder, MinMod, VanLeer, MonotonizedCentral, Superbee };
 enum class RiemannSolverKind { HLL, HLLC };
 enum class BoundaryKind { Transmissive, Periodic, Reflective };

@@ -37,8 +37,9 @@ void SimulationConfig::validate() const {
     // un limitador desconocido: el parser rechaza la cadena antes de llegar
     // aqui, que es justo la garantia que se pedia (una opcion invalida nunca
     // selecciona otro algoritmo en silencio).
-    if (test < 1 || test > 8) {
-        throw ConfigError("test debe estar entre 1 y 8; recibido: " + std::to_string(test));
+    if (test < 1 || test > kTestCaseCount) {
+        throw ConfigError("test debe estar entre 1 y " + std::to_string(kTestCaseCount) +
+                          "; recibido: " + std::to_string(test));
     }
     if (cell_count < 4) {
         throw ConfigError("N debe ser >= 4; recibido: " + std::to_string(cell_count));

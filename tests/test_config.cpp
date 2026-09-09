@@ -97,7 +97,7 @@ TEST(el_valor_del_solver_es_insensible_a_mayusculas) {
 
 TEST(validate_rechaza_rangos_imposibles) {
     SimulationConfig config;
-    config.test = 9;
+    config.test = kTestCaseCount + 1;
     CHECK_THROWS(config.validate(), ConfigError);
 
     config = SimulationConfig{};
@@ -210,8 +210,13 @@ TEST(sin_eleccion_explicita_no_se_avisa_de_nada) {
 }
 
 TEST(un_test_fuera_de_rango_es_un_error) {
+    // Expresado en funcion de kTestCaseCount para que el test siga siendo
+    // correcto cuando se añadan casos nuevos.
     CHECK_THROWS(testCaseDefinition(0), ConfigError);
-    CHECK_THROWS(testCaseDefinition(9), ConfigError);
+    CHECK_THROWS(testCaseDefinition(kTestCaseCount + 1), ConfigError);
+    // Los extremos validos si deben existir.
+    CHECK(!testCaseDefinition(1).name.empty());
+    CHECK(!testCaseDefinition(kTestCaseCount).name.empty());
 }
 
 TEST(los_estados_iniciales_de_los_cinco_tests_de_toro) {

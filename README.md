@@ -55,6 +55,9 @@ cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
 cmake --build build
 ```
 
+Guía detallada de MSYS2 (qué shell usar, qué paquetes instalar, cómo depurar y
+graficar): **[docs/msys2_guide.md](docs/msys2_guide.md)**.
+
 Produce dos ejecutables en `build/`: `xEuler1D` (el solver) y `euler1d_compare`
 (comparador cuantitativo de dos corridas).
 
@@ -162,10 +165,11 @@ Hay configuraciones listas en [`examples/`](examples).
 ctest --test-dir build --output-on-failure
 ```
 
-Seis ejecutables: unitarios (`test_physics`, `test_numerics`,
+87 casos en seis ejecutables: unitarios (`test_physics`, `test_numerics`,
 `test_exact_riemann`, `test_config`), integración (`test_integration`) y
 regresión contra las salidas archivadas del Fortran (`test_regression`).
-Detalles y tolerancias en [docs/testing.md](docs/testing.md).
+Detalles y tolerancias en [docs/testing.md](docs/testing.md); cómo escribir tus
+propias pruebas, en [docs/extending.md](docs/extending.md).
 
 ## Validación contra el Fortran
 
@@ -190,6 +194,8 @@ pasos temporales coincidiendo exactamente en todos. Números completos en
 
 | Documento | Contenido |
 |---|---|
+| [docs/msys2_guide.md](docs/msys2_guide.md) | Guía paso a paso con MSYS2 UCRT64: shell correcta, paquetes, compilar, ejecutar, depurar, graficar, problemas frecuentes |
+| [docs/extending.md](docs/extending.md) | Cómo añadir tus propias pruebas, casos físicos y métodos numéricos |
 | [docs/architecture.md](docs/architecture.md) | Componentes, responsabilidades, dependencias, flujo de datos |
 | [docs/numerical_method.md](docs/numerical_method.md) | Volúmenes finitos, Godunov, MUSCL, limitadores, HLL/HLLC, RK2, CFL, fronteras |
 | [docs/validation.md](docs/validation.md) | Validación cuantitativa contra el Fortran |

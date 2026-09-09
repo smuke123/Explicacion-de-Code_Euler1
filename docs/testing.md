@@ -179,7 +179,11 @@ TEST(nombre_descriptivo_en_snake_case) {
 ```
 
 Se registra solo. Para un archivo nuevo, añadir el nombre (sin `.cpp`) a
-`EULER1D_TESTS` en `tests/CMakeLists.txt`.
+`EULER1D_TESTS` en `tests/CMakeLists.txt` y reconfigurar CMake.
+
+La guía completa —cómo elegir la tolerancia, cómo escribir un test de
+integración, cómo congelar un caso de regresión propio y cómo añadir un caso
+físico nuevo— está en **[extending.md](extending.md)**.
 
 ## Cobertura: qué no cubre la suite
 
