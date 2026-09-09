@@ -1,0 +1,21 @@
+# El repositorio almacena y entrega LF en todo el codigo fuente, tambien en
+# Windows. No es una preferencia estetica: `OutputManager` abre los archivos en
+# modo binario y termina las lineas con LF a proposito, para que los `.xl` sean
+# identicos byte a byte a los que produce el Fortran. Si git convirtiera a CRLF
+# al hacer checkout, la comparacion directa dejaria de ser posible.
+* text=auto eol=lf
+
+# Datos de referencia: NUNCA se tocan.
+#
+# Estos son los `.xl` producidos por el codigo Fortran y son la referencia del
+# test de regresion. Marcarlos como binarios impide cualquier normalizacion de
+# fin de linea, ahora y en cualquier plataforma.
+*.xl -text
+tests/reference/**/log.txt -text
+
+# Namelists: los leen tanto el Fortran como el C++.
+*.par text eol=lf
+
+# Los scripts de PowerShell se editan en Windows; CRLF evita sorpresas con
+# editores antiguos y PowerShell acepta ambos.
+*.ps1 text eol=crlf

@@ -1,0 +1,15 @@
+# Compilacion
+build/
+build-*/
+
+# Salidas de simulacion en la raiz (xEuler1D escribe en el cwd por defecto)
+/*.xl
+/run_info.txt
+output/
+
+# Editores y sistema
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+desktop.ini

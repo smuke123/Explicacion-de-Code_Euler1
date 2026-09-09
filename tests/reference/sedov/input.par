@@ -1,0 +1,5 @@
+&euler
+ test = 8
+ N = 800
+ every_out = 200
+/

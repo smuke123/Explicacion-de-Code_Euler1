@@ -1,0 +1,12 @@
+! Test 2 de Toro ("123"): dos rarefacciones simetricas que dejan una region
+! casi de vacio en el centro. Es el caso duro para el solver exacto: p* baja a
+! 1.89e-3 partiendo de p_L = p_R = 0.4, y una semilla aritmetica no converge.
+! Por eso se usa la semilla TRRS (Toro ec. 4.46).
+&euler
+ test = 2
+ N = 400
+ cfl = 0.9
+ gamma = 1.4
+ limiter = 'vl'
+ solver = 'hllc'
+/

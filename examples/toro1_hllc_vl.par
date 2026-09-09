@@ -1,0 +1,12 @@
+! Test 1 de Toro (Tabla 4.1): Sod modificado con u_L = 0.75.
+! El abanico de rarefaccion contiene el punto sonico, que es donde fallan los
+! esquemas mal centrados. Valores estrella de referencia: p* = 0.46629,
+! u* = 1.36091.
+&euler
+ test = 1
+ N = 400
+ cfl = 0.9
+ gamma = 1.4
+ limiter = 'vl'
+ solver = 'hllc'
+/

@@ -1,0 +1,19 @@
+! Test 7: atmosfera isoterma en equilibrio hidrostatico, rho = exp(-g x).
+!
+! Mide si el esquema es BIEN BALANCEADO. Un fluido en reposo debe seguir en
+! reposo: al final se imprime max|u|, que debe quedar a nivel de redondeo
+! (~1e-15 con esta configuracion). Un esquema no balanceado genera |u| ~ 1e-3.
+!
+! Nota: los archivos *_exact.xl de este test NO son la atmosfera hidrostatica;
+! salen constantes. Vease docs/inconsistencies.md.
+!
+! Este test impone bc = 'refl' y, si no se da gravedad, grav = 1.
+&euler
+ test = 7
+ N = 200
+ cfl = 0.9
+ gamma = 1.4
+ limiter = 'vl'
+ solver = 'hllc'
+ tf = 10.0
+/

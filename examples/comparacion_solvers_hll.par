@@ -1,0 +1,14 @@
+! Misma configuracion que examples/toro1_hllc_vl.par pero con HLL.
+!
+! Sirve para el objetivo de investigacion del proyecto (comparar solvers de
+! Riemann): HLL promedia sobre las dos ondas acusticas y difumina la
+! discontinuidad de contacto, mientras HLLC la resuelve. Ejecute los dos y
+! compare rho_1.xl contra rho_exact.xl.
+&euler
+ test = 1
+ N = 400
+ cfl = 0.9
+ gamma = 1.4
+ limiter = 'vl'
+ solver = 'hll'
+/

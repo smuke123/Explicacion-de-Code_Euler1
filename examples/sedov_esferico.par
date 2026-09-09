@@ -1,0 +1,20 @@
+! Test 8: explosion de Sedov-Taylor en simetria esferica (alpha_geo = 2).
+!
+! Energia E0 = 1 depositada como presion en las cuatro primeras celdas sobre un
+! ambiente frio (p = 1e-9). La divergencia usa areas A = r^2 y volumenes
+! exactos, mas el termino geometrico de presion p (A+ - A-)/V, que cancela
+! exactamente la divergencia de una presion uniforme.
+!
+! Este test impone alpha_geo = 2, bc = 'refl' y xmax = 1.2.
+!
+! ATENCION: los archivos *_exact.xl de este test NO son la solucion de Sedov.
+! El codigo original muestrea un problema de Riemann con estados L y R iguales,
+! asi que salen constantes. Vease docs/inconsistencies.md.
+&euler
+ test = 8
+ N = 400
+ cfl = 0.9
+ gamma = 1.4
+ limiter = 'vl'
+ solver = 'hllc'
+/

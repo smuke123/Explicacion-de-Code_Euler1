@@ -1,0 +1,7 @@
+&euler
+ test = 6
+ N = 200
+ cfl = 0.5
+ limiter = 'vl'
+ solver = 'hllc'
+/

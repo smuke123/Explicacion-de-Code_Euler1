@@ -1,0 +1,3 @@
+ config: test= 4  N=  400  solver=hllc  limiter=vl  cfl= 0.900
+ exacto: p* =  1.691647E+03   u* =  8.689774E+00
+ pasos:    467   t final:   0.035000

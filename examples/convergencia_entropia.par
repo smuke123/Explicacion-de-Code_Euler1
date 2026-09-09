@@ -1,0 +1,15 @@
+! Test 6: onda de entropia suave, rho = 1 + 0.2 sin(2 pi x) con u = p = 1.
+!
+! La solucion exacta es la sinusoide advectada, asi que sirve para medir el
+! orden de convergencia del esquema. Repita con N = 50, 100, 200, 400 y ajuste
+! log(L1) frente a log(N): MUSCL debe dar pendiente ~2 y 'fo' pendiente ~1.
+!
+! Este test impone fronteras periodicas (bc = 'per') aunque no se pidan.
+&euler
+ test = 6
+ N = 100
+ cfl = 0.9
+ gamma = 1.4
+ limiter = 'vl'
+ solver = 'hllc'
+/
