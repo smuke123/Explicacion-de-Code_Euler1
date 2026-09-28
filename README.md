@@ -192,11 +192,39 @@ pasos temporales coincidiendo exactamente en todos. Números completos en
 
 ## Documentación
 
+### Planificación del proyecto
+
+Conjunto de documentos de ingeniería producido en la fase de planificación. Es la
+especificación que guía la implementación.
+
+| Documento | Contenido |
+|---|---|
+| [docs/project_definition.md](docs/project_definition.md) | Identidad, propósito, alcance, usuarios, CLI y formatos de entrada y salida |
+| [docs/requirements.md](docs/requirements.md) | 38 requisitos funcionales y 17 no funcionales, con criterios de aceptación y estado |
+| [docs/use_cases.md](docs/use_cases.md) | Nueve casos de uso con flujos principales y de error |
+| [docs/alcance.md](docs/alcance.md) | Alcance acordado y doce puntos abiertos pendientes del director |
+| [docs/roadmap.md](docs/roadmap.md) | Quince hitos ordenados por reducción de riesgo, con criterios de cierre |
+| [docs/decision_log.md](docs/decision_log.md) | 22 decisiones arquitectónicas con alternativas y consecuencias |
+| [docs/traceability.md](docs/traceability.md) | Requisito → componente → prueba → evidencia |
+| [docs/pending_input.md](docs/pending_input.md) | **Qué falta del director**, y qué se puede avanzar sin ello |
+
+### Especificación técnica
+
+| Documento | Contenido |
+|---|---|
+| [docs/architecture.md](docs/architecture.md) | Componentes, dependencias, flujo de datos, principios de diseño y patrones. Incluye la arquitectura objetivo 1D+2D |
+| [docs/technology_stack.md](docs/technology_stack.md) | Lenguaje, construcción, compiladores, pruebas, CI, control de versiones, herramientas |
+| [docs/coding_standards.md](docs/coding_standards.md) | Estructura de directorios, nomenclatura, estilo, manejo de errores, convenciones numéricas |
+| [docs/numerical_invariants.md](docs/numerical_invariants.md) | **Qué no se cambia y por qué.** Catorce invariantes y el procedimiento para desviarse |
+| [docs/validation_strategy.md](docs/validation_strategy.md) | Niveles de prueba, qué prueba y qué NO prueba cada uno, política de datos de referencia, tolerancias |
+| [docs/development_workflow.md](docs/development_workflow.md) | Ciclo de vida de un cambio y Definition of Done por tipo de tarea |
+
+### Guías de uso
+
 | Documento | Contenido |
 |---|---|
 | [docs/msys2_guide.md](docs/msys2_guide.md) | Guía paso a paso con MSYS2 UCRT64: shell correcta, paquetes, compilar, ejecutar, depurar, graficar, problemas frecuentes |
 | [docs/extending.md](docs/extending.md) | Cómo añadir tus propias pruebas, casos físicos y métodos numéricos |
-| [docs/architecture.md](docs/architecture.md) | Componentes, responsabilidades, dependencias, flujo de datos |
 | [docs/numerical_method.md](docs/numerical_method.md) | Volúmenes finitos, Godunov, MUSCL, limitadores, HLL/HLLC, RK2, CFL, fronteras |
 | [docs/validation.md](docs/validation.md) | Validación cuantitativa contra el Fortran |
 | [docs/testing.md](docs/testing.md) | Suite de pruebas y tolerancias |
