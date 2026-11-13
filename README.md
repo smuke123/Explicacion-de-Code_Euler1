@@ -86,6 +86,25 @@ Opciones de CMake:
 | `-o, --output <dir>` | Directorio de salida (por defecto el actual) |
 | `-q, --quiet` | No imprimir progreso |
 
+## Laboratorio interactivo (prototipo)
+
+Demostración de la idea central: **aprender → modificar → ejecutar → ver → comparar → entender**.
+La GUI no contiene HLL/HLLC/MUSCL: lanza `xEuler1D` y pinta los `.xl`.
+
+```powershell
+python -m pip install -r tools/requirements-lab.txt
+.\run_lab.ps1
+```
+
+O: `python tools/fvlab_lab/app.py`
+
+El plan y los atajos del prototipo están en [docs/mvp_plan.md](docs/mvp_plan.md).
+Script de comprobación (parser `.xl`, namelist, humo del binario):
+
+```powershell
+python tools/fvlab_lab/test_lab.py
+```
+
 ### Archivos de salida
 
 En el directorio de salida se escriben `rho_1.xl`, `vel_1.xl`, `press_1.xl`

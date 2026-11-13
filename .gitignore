@@ -13,3 +13,7 @@ output/
 *.swp
 Thumbs.db
 desktop.ini
+
+# Cache de Python (GUI del laboratorio)
+__pycache__/
+*.pyc

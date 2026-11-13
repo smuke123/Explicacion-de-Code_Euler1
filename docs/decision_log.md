@@ -342,3 +342,18 @@ regresión.
 | ADR-020 | Sin `Factory` con jerarquía, sin `Observer`, sin `Singleton` | Ver `architecture.md` §12.7 |
 | ADR-021 | Datos de referencia marcados como binarios en `.gitattributes` | Se comparan byte a byte; cualquier conversión de fin de línea invalidaría la validación |
 | ADR-022 | El solver exacto no participa en el avance temporal | Si participara, la comparación contra la solución exacta sería circular |
+
+---
+
+## Decisiones del prototipo GUI (2026-09-28)
+
+Registradas para no reabrirlas durante la semana del MVP. Detalle en `docs/mvp_plan.md`.
+
+| ID | Decisión | Estado |
+|---|---|---|
+| MVP-01 | GUI = Tkinter + matplotlib, no Qt/Electron | Aceptada |
+| MVP-02 | El núcleo se invoca por proceso (`xEuler1D`), no por pybind11 | Aceptada |
+| MVP-03 | Contrato GUI ↔ núcleo = namelist `&euler` + archivos `.xl` | Aceptada |
+| MVP-04 | Cero cambios en fórmulas numéricas para integrar la GUI | Aceptada |
+| MVP-05 | Catálogo pedagógico en Python; fragmentos leídos del `.hpp` real | Aceptada |
+| MVP-06 | Comparación = dos corridas en memoria, no un segundo solver | Aceptada |
