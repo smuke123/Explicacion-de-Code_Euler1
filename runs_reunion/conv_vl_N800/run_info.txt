@@ -1,0 +1,26 @@
+# Euler1D C++ -- configuracion efectiva de la corrida
+test         = 6
+N            = 800
+cfl          = 0.9
+gamma        = 1.4
+limiter      = vl
+solver       = hllc
+bc           = per
+alpha_geo    = 0
+grav         = 0
+xmin         = 0
+xmax         = 1
+x0           = 0.5
+tf           = 1
+every_out    = 0
+rho_floor    = 1e-12
+p_floor      = 1e-12
+steps        = 2065
+t_final      = 1
+wall_seconds = 0.115536
+floor_rho_hits = 0
+floor_p_hits = 0
+reconstruction = muscl-vl
+riemann = hllc
+integrator = ssp-rk2
+divergence = cartesiana
